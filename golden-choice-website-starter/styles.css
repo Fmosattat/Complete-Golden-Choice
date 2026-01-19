@@ -147,6 +147,8 @@ img{max-width:100%;display:block}
 .vTabs__panelInner{padding:22px}
 .vTabs__panel h3{margin:0 0 10px;font-size:22px}
 .vTabs__panel p{margin:0;color:var(--muted);line-height:1.7}
+.vTabs__bullets{margin:14px 0 0;padding-left:18px;color:var(--muted);line-height:1.7;display:grid;gap:6px}
+.vTabs__bullets li{list-style:disc}
 .vTabs__media{margin-top:16px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--soft)}
 .vTabs__cta{margin-top:14px}
 

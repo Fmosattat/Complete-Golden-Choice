@@ -115,11 +115,41 @@
   ];
 
   const serviceTabs = [
-    { id: 'recruitment', label: 'Recruitment Services', imageBase: 'Recruitment Services', body: 'Add your Recruitment Services description here.' },
-    { id: 'housekeeping', label: 'Housekeeping Services', imageBase: 'Housekeeping Services', body: 'Add your Housekeeping Services description here.' },
-    { id: 'outsourcing', label: 'Manpower Outsourcing Services', imageBase: 'Manpower Outsourcing Services', body: 'Add your Manpower Outsourcing Services description here.' },
-    { id: 'hospitality', label: 'Hospitality Services', imageBase: 'Hospitality Services', body: 'Add your Hospitality Services description here.' },
-    { id: 'pro', label: 'PRO Services', imageBase: 'PRO SERVICES', body: 'Add your PRO Services description here.' },
+    {
+      id: 'recruitment',
+      label: 'Recruitment Services',
+      imageBase: 'Recruitment Services',
+      body: 'Add your Recruitment Services description here.',
+      bullets: ['Candidate sourcing & screening', 'Skilled + unskilled placements', 'Onboarding & compliance support']
+    },
+    {
+      id: 'housekeeping',
+      label: 'Housekeeping Services',
+      imageBase: 'Housekeeping Services',
+      body: 'Add your Housekeeping Services description here.',
+      bullets: ['Facility upkeep & sanitation', 'Trained housekeeping teams', 'Quality inspections & reporting']
+    },
+    {
+      id: 'outsourcing',
+      label: 'Manpower Outsourcing Services',
+      imageBase: 'Manpower Outsourcing Services',
+      body: 'Add your Manpower Outsourcing Services description here.',
+      bullets: ['Flexible workforce planning', 'Project-based staffing', 'Payroll & HR administration']
+    },
+    {
+      id: 'hospitality',
+      label: 'Hospitality Services',
+      imageBase: 'Hospitality Services',
+      body: 'Add your Hospitality Services description here.',
+      bullets: ['Hotel & event staffing', 'Guest service training', 'Operational excellence support']
+    },
+    {
+      id: 'pro',
+      label: 'PRO Services',
+      imageBase: 'PRO SERVICES',
+      body: 'Add your PRO Services description here.',
+      bullets: ['Visa processing & renewals', 'Government documentation', 'Regulatory compliance assistance']
+    },
   ];
 
   const awardPhotos = [
@@ -241,6 +271,17 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
       p.textContent = t.body || '';
       inner.appendChild(p);
 
+      if (Array.isArray(t.bullets) && t.bullets.length > 0) {
+        const ul = document.createElement('ul');
+        ul.className = 'vTabs__bullets';
+        t.bullets.forEach((item) => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+        inner.appendChild(ul);
+      }
+
       // media
       if (t.imageBase) {
         const media = document.createElement('div');
@@ -352,24 +393,57 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
   });
 
   // On load: support #services-hospitality-services etc.
-  function parseServiceFromHash() {
-    const h = (location.hash || '').toLowerCase();
-    if (!h.startsWith('#services-')) return null;
-    const slug = h.replace('#services-', '').trim();
-    if (!slug) return null;
+  function normalizeServiceSlug(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .trim();
+  }
 
-    // map known slugs
+  function mapServiceSlug(slug) {
     const map = {
       'recruitment-services': 'Recruitment Services',
       'housekeeping-services': 'Housekeeping Services',
       'manpower-outsourcing-services': 'Manpower Outsourcing Services',
       'hospitality-services': 'Hospitality Services',
-      'pro-services': 'PRO Services'
+      'pro-services': 'PRO Services',
+      'recruitment': 'Recruitment Services',
+      'housekeeping': 'Housekeeping Services',
+      'manpower-outsourcing': 'Manpower Outsourcing Services',
+      'hospitality': 'Hospitality Services',
+      'pro': 'PRO Services'
     };
     return map[slug] || null;
   }
 
-  const initialService = parseServiceFromHash();
+  function parseServiceFromHash() {
+    const rawHash = location.hash || '';
+    const cleanHash = rawHash.toLowerCase();
+
+    if (cleanHash.startsWith('#services-')) {
+      const slug = cleanHash.replace('#services-', '').trim();
+      return mapServiceSlug(slug);
+    }
+
+    if (cleanHash.startsWith('#services') && cleanHash.includes('?')) {
+      const query = cleanHash.split('?')[1] || '';
+      const params = new URLSearchParams(query);
+      const tab = params.get('tab');
+      if (tab) return mapServiceSlug(normalizeServiceSlug(tab));
+    }
+
+    return null;
+  }
+
+  function parseServiceFromQuery() {
+    const params = new URLSearchParams(location.search);
+    const tab = params.get('tab');
+    if (tab) return mapServiceSlug(normalizeServiceSlug(tab));
+    return null;
+  }
+
+  const initialService = parseServiceFromHash() || parseServiceFromQuery();
   if (initialService) {
     // wait for layout
     setTimeout(() => openService(initialService), 250);
