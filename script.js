@@ -166,6 +166,7 @@
     {
       id: 'moshahid-reza',
       label: 'Moshahid Reza',
+      subtitle: 'CEO',
       title: 'CEO Mr. Moshahid Reza message:',
       imageBase: 'Moshahid Reza',
       body: `"I am driven by a vision for excellence, we assure impeccable manpower solutions, fostering partnerships that redefine industry standards and empower organizational growth." As Chairman of Golden Choice, I'm committed to upholding our promises and enhancing organizational productivity through Qatar professionals, setting industry standards, and fostering mutually beneficial partnerships with Nepalese talent and organizations.
@@ -174,6 +175,7 @@ We propose a strategic alliance to provide efficient, economic, and confidential
     {
       id: 'pragyanand-rai',
       label: 'Pragyanand Rai',
+      subtitle: 'General Manager',
       title: "GENERAL MANAGER'S MESSAGE Mr. Pragyanand Rai",
       imageBase: 'Pragyanand Rai',
       body: `"Empowering Success through Integrity, Quality, and Partnership." As a General Manager of Golden Choice. With over three decades of experience, we are proud to be a trusted partner in facility management, waste management, and manpower recruitment, delivering tailored solutions to meet the needs of businesses in Qatar and worldwide. Our commitment to quality, efficiency, and professionalism drives everything we do, empowering our clients to achieve their goals.
@@ -182,6 +184,7 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
     {
       id: 'vikas-kumar',
       label: 'Vikas Kumar',
+      subtitle: 'Operation Coordinator',
       title: "OPERATION COORDINATOR'S Mr. Vikas Kumar",
       imageBase: 'Vikas Kumar',
       body: `With relentless dedication to our mission and vision, we are determined to deliver on our promise of exceptional value. With Golden Choice Contracting and Services" At Golden Choice, we are driven by a singular purpose – to provide exceptional value to our clients. Therefore, we continually improve our operations to meet their evolving needs. Our operational flexibility and commitment to high quality standards allow us to swiftly respond to their requests as soon as the need arises. Maintaining such standards has only been possible through a dedicated workforce, whose well-being and safety remain a priority. As such, we have implemented stringent Adopting a preventative and proactive approach to safety, we are able to focus on streamlining operations and supporting new growth to organisation.`
@@ -322,7 +325,17 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
       btn.setAttribute('role', 'tab');
       btn.setAttribute('aria-selected', 'false');
       btn.tabIndex = -1;
-      btn.textContent = t.label;
+      const title = document.createElement('span');
+      title.className = 'vTabs__tabTitle';
+      title.textContent = t.label;
+      btn.appendChild(title);
+
+      if (t.subtitle) {
+        const subtitle = document.createElement('span');
+        subtitle.className = 'vTabs__tabSubtitle';
+        subtitle.textContent = t.subtitle;
+        btn.appendChild(subtitle);
+      }
 
       btn.addEventListener('click', () => setActive(i, true));
       btn.addEventListener('keydown', (e) => {

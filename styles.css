@@ -19,9 +19,10 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
+  overflow-x:hidden;
 }
-img{max-width:100%;display:block}
-.container{width:min(1120px,92%);margin-inline:auto}
+img{max-width:100%;height:auto;display:block}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
 
 .topbar{background:#0b1220;color:#e2e8f0;font-size:13px}
 .topbar__inner{display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 0}
@@ -34,8 +35,8 @@ img{max-width:100%;display:block}
 .header__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
 
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.brand__logo{width:40px;height:40px;object-fit:contain;border-radius:12px;background:var(--soft);padding:6px;border:1px solid var(--line)}
-.brand__name{font-weight:800;letter-spacing:.06em}
+.brand__logo{width:52px;height:52px;object-fit:contain;border-radius:14px;background:var(--soft);padding:6px;border:1px solid var(--line)}
+.brand__name{font-weight:800;letter-spacing:.06em;font-size:18px}
 
 .nav{display:flex;align-items:center;gap:18px}
 .nav__link{color:var(--text);text-decoration:none;font-weight:600;font-size:14px;opacity:.9}
@@ -87,10 +88,11 @@ img{max-width:100%;display:block}
 .mobile__cta{margin-top:6px}
 
 .section{padding:72px 0}
-.section--tight{padding:32px 0}
+.section--tight{padding:16px 0 24px}
 .sectionHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
 .sectionHeader h2{margin:0;font-size:34px;letter-spacing:-.02em}
 .sectionHeader p{margin:0;color:var(--muted);max-width:640px}
+.sectionCopy{margin:0 0 22px;color:var(--muted);max-width:780px}
 
 .hero{padding-top:54px}
 .hero__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:stretch}
@@ -123,10 +125,10 @@ img{max-width:100%;display:block}
 .stat__num{font-weight:900;font-size:18px}
 .stat__label{color:var(--muted);font-size:13px;margin-top:6px}
 
-.logoMarquee{border:1px solid var(--line);border-radius:999px;background:var(--soft);overflow:hidden;position:relative}
-.logoMarquee__track{display:flex;gap:34px;align-items:center;padding:16px 24px;will-change:transform;animation:marquee 30s linear infinite}
+.logoMarquee{border:1px solid var(--line);border-radius:999px;background:var(--soft);overflow:hidden;position:relative;min-height:72px;display:flex;align-items:center}
+.logoMarquee__track{display:flex;gap:40px;align-items:center;padding:20px 28px;will-change:transform;animation:marquee 30s linear infinite}
 .logoMarquee:hover .logoMarquee__track{animation-play-state:paused}
-.logoMarquee__logo{height:34px;opacity:.95;filter:saturate(.95)}
+.logoMarquee__logo{height:46px;opacity:.95;filter:saturate(.95)}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 .vTabs{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start}
@@ -139,8 +141,10 @@ img{max-width:100%;display:block}
   text-align:left;
   cursor:pointer;
   font-weight:800;
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:2px;
 }
+.vTabs__tabTitle{display:block;font-weight:800}
+.vTabs__tabSubtitle{display:block;font-size:12px;color:var(--muted);margin-top:4px}
 .vTabs__tab:hover{box-shadow:var(--shadow2)}
 .vTabs__tab[aria-selected="true"]{border-color:rgba(37,99,235,.35);background:linear-gradient(180deg,rgba(37,99,235,.08),#fff)}
 .vTabs__panel{border:1px solid var(--line);border-radius:var(--radius2);background:var(--card);box-shadow:var(--shadow);overflow:hidden}
@@ -218,6 +222,8 @@ img{max-width:100%;display:block}
   .nav{display:none}
   .hamburger{display:block}
   .mobile.is-open{display:block}
+  .brand__logo{width:44px;height:44px}
+  .brand__name{font-size:16px}
   .hero__miniGrid{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
@@ -226,4 +232,6 @@ img{max-width:100%;display:block}
   .sectionHeader{flex-direction:column;align-items:flex-start}
   .form__row{grid-template-columns:1fr}
   .contactCards{grid-template-columns:1fr}
+  .logoMarquee__track{padding:16px 20px}
+  .logoMarquee__logo{height:34px}
 }
