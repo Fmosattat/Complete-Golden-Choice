@@ -9,6 +9,10 @@
   --hero-navy-3:#070f22;
   --section-light-blue-1:#e8f2ff;
   --section-light-blue-2:#f5f9ff;
+  --chip-bg:rgba(255,255,255,.14);
+  --chip-bg-hover:rgba(255,255,255,.22);
+  --chip-border:rgba(255,255,255,.18);
+  --chip-text:rgba(255,255,255,.92);
   --text:rgba(255,255,255,.92);
   --muted:rgba(255,255,255,.78);
   --border:rgba(255,255,255,.10);
@@ -57,15 +61,15 @@ img{max-width:100%;height:auto;display:block}
 .topbar__date{opacity:.9}
 .topbar__sep{opacity:.6}
 
-.header{position:sticky;top:0;z-index:40;background:linear-gradient(90deg,#dcebff 0%, #eef6ff 100%);backdrop-filter: blur(12px);border-bottom:1px solid rgba(15,23,42,.12)}
+.header{position:sticky;top:0;z-index:40;background:radial-gradient(circle at 20% 20%, #e9f4ff 0%, #cfe7ff 40%, #bfe0ff 100%);backdrop-filter: blur(12px);border-bottom:1px solid rgba(255,255,255,.45);box-shadow:0 8px 24px rgba(15,23,42,.08)}
 .header__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;gap:16px;color:#0b1220}
 
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.brand__logo{width:52px;height:52px;object-fit:contain;border-radius:14px;background:transparent;padding:6px;border:1px solid rgba(15,23,42,.12);box-shadow:var(--shadow2);filter:brightness(0) invert(1)}
+.brand__logo{width:52px;height:52px;object-fit:contain;border-radius:14px;background:transparent;padding:6px;border:1px solid rgba(15,23,42,.12);box-shadow:var(--shadow2)}
 .brand__name{font-weight:800;letter-spacing:.06em;font-size:clamp(16px, 1.6vw, 20px)}
 
-.nav{display:flex;align-items:center;gap:18px}
-.nav__link{color:#0b1220;text-decoration:none;font-weight:600;font-size:14px;opacity:.9}
+.nav{display:flex;align-items:center;gap:22px}
+.nav__link{color:#0b1220;text-decoration:none;font-weight:700;font-size:16px;opacity:.9}
 .nav__link:hover{opacity:1}
 .nav__link--btn{background:transparent;border:0;cursor:pointer;padding:8px 10px;border-radius:12px}
 .nav__link--btn:hover{background:rgba(37,99,235,.12)}
@@ -161,7 +165,21 @@ img{max-width:100%;height:auto;display:block}
 .imgArrow span{font-size:18px}
 
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.stat{border:1px solid var(--border);border-radius:16px;padding:14px 14px;background:var(--card)}
+.section--home .stat{
+  border:1px solid var(--chip-border);
+  border-radius:999px;
+  padding:12px 16px;
+  background:var(--chip-bg);
+  color:var(--chip-text);
+  box-shadow:var(--shadow2);
+  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.section--home .stat:hover{
+  background:var(--chip-bg-hover);
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(0,0,0,.2);
+}
+.section--home .stat__label{color:var(--chip-text)}
 .stat__num{font-weight:900;font-size:clamp(16px, 1.8vw, 20px)}
 .stat__label{color:var(--muted);font-size:13px;margin-top:6px}
 
@@ -357,3 +375,4 @@ img{max-width:100%;height:auto;display:block}
   .logoMarquee__logo{height:54px}
   .stat__num{font-size:clamp(18px, 1.6vw, 22px)}
 }
+.header__cta{margin-left:auto}
