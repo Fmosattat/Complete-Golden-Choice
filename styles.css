@@ -9,6 +9,7 @@
   --hero-navy-3:#2a0b12;
   --section-light-blue-1:#dfffea;
   --section-light-blue-2:#f2fff7;
+  --accent-green:#b5f1cc;
   --chip-bg:rgba(255,255,255,.14);
   --chip-bg-hover:rgba(255,255,255,.22);
   --chip-border:rgba(255,255,255,.18);
@@ -177,9 +178,10 @@ img{max-width:100%;height:auto;display:block}
 .hero__imageWrap{position:relative;border-radius:var(--radius2);overflow:hidden;background:var(--soft);border:none;box-shadow:var(--shadow)}
 .hero__imageWrap--large{width:100%}
 .hero__image{width:100%;height:100%;object-fit:cover}
+.hero__miniGrid .hero__image{cursor:pointer}
 .hero__headline{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);padding:22px;box-shadow:var(--shadow2)}
 .hero__kicker{font-weight:800;letter-spacing:.08em;color:var(--accent);font-size:13px}
-.hero__title{margin:10px 0 10px;font-size:clamp(28px, 3vw, 44px);line-height:1.12;letter-spacing:-.03em}
+.hero__title{margin:10px 0 10px;font-size:clamp(28px, 3vw, 44px);line-height:1.12;letter-spacing:-.03em;color:var(--accent-green)}
 .hero__subtitle{margin:0;color:var(--muted)}
 .hero__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .hero__miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -221,11 +223,11 @@ img{max-width:100%;height:auto;display:block}
   transform:translateY(-2px);
   box-shadow:0 12px 24px rgba(0,0,0,.2);
 }
-.section--home .stat__label{color:var(--muted)}
-.stat__num{font-weight:900;font-size:clamp(16px, 1.8vw, 20px)}
-.stat__label{color:var(--muted);font-size:13px;margin-top:6px}
+.section--home .stat__label{color:var(--accent-green)}
+.stat__num{font-weight:900;font-size:clamp(16px, 1.8vw, 20px);color:var(--accent-green)}
+.stat__label{font-size:13px;margin-top:6px}
 
-.logoMarquee{border:1px solid #b5f1cc;border-radius:999px;background:#0b1b3a;overflow:hidden;position:relative;min-height:72px;display:flex;align-items:center;box-shadow:var(--shadow2)}
+.logoMarquee{border:1px solid var(--accent-green);border-radius:999px;background:#0b1b3a;overflow:hidden;position:relative;min-height:72px;display:flex;align-items:center;box-shadow:var(--shadow2)}
 .logoMarquee__track{display:flex;gap:40px;align-items:center;padding:20px 28px;will-change:transform;animation:marquee 30s linear infinite}
 .logoMarquee:hover .logoMarquee__track{animation-play-state:paused}
 .logoMarquee__logo{height:46px;opacity:.8;filter:grayscale(.2);transition:opacity .2s ease, filter .2s ease}

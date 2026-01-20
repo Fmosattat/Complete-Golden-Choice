@@ -493,6 +493,9 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
     updateHeroImages(0);
     startHeroRotation();
 
+    heroSmallImgA.addEventListener('click', () => openLightbox(heroSmallImgA.src));
+    heroSmallImgB.addEventListener('click', () => openLightbox(heroSmallImgB.src));
+
     heroDots.forEach((dot) => {
       dot.addEventListener('click', () => {
         const idx = Number(dot.getAttribute('data-hero-dot'));
