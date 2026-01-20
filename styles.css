@@ -66,7 +66,7 @@ img{max-width:100%;height:auto;display:block}
 .nav-surface{
   background:radial-gradient(circle at 20% 20%, #e9f4ff 0%, #cfe7ff 40%, #bfe0ff 100%);
   border-radius:20px;
-  overflow:hidden;
+  overflow:visible;
   box-shadow:0 10px 26px rgba(15,23,42,.12);
   border:1px solid rgba(255,255,255,.45);
 }
@@ -417,7 +417,7 @@ img{max-width:100%;height:auto;display:block}
   overflow:hidden;
   padding:clamp(24px, 3vw, 40px);
 }
-.section-surface--home{background:radial-gradient(circle at 20% 10%, var(--hero-navy-1) 0%, var(--hero-navy-2) 45%, var(--hero-navy-3) 100%)}
+.section-surface--home{background:radial-gradient(circle at 20% 20%, #e9f4ff 0%, #cfe7ff 40%, #bfe0ff 100%)}
 .section-surface--partners{background:linear-gradient(180deg, var(--section-light-blue-1) 0%, var(--section-light-blue-2) 100%)}
 .section-surface--about{background:var(--bg-3)}
 .section-surface--services{background:var(--bg-4)}
