@@ -38,6 +38,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html{scroll-padding-top:72px}
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -118,7 +119,7 @@ img{max-width:100%;height:auto;display:block}
 .mobile__sublink{display:block;width:100%;text-align:left;background:transparent;border:0;padding:10px 0;font-weight:700;cursor:pointer;color:#0b1220}
 .mobile__cta{margin-top:6px}
 
-.section{padding:clamp(48px, 6vw, 96px) 0;border-top:1px solid var(--divider)}
+.section{padding:clamp(16px, 2vw, 24px) 0;border-top:1px solid var(--divider);margin-top:0 !important}
 .section--tight{padding:16px 0 24px}
 .sectionHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
 .sectionHeader h2{margin:0;font-size:clamp(26px, 2.6vw, 36px);letter-spacing:-.02em}
@@ -127,8 +128,8 @@ img{max-width:100%;height:auto;display:block}
 .sectionCopy{margin:0 0 22px;color:var(--muted);max-width:780px}
 .text-block{max-width:70ch}
 
-.section--home{background:radial-gradient(circle at 20% 10%, var(--hero-navy-1) 0%, var(--hero-navy-2) 45%, var(--hero-navy-3) 100%);padding-top:clamp(16px, 2vw, 24px)}
-.section--partners{background:linear-gradient(180deg, var(--section-light-blue-1) 0%, var(--section-light-blue-2) 100%)}
+.section--home{background:none;padding-top:0 !important}
+.section--partners{background:none}
 .section--about{background:var(--bg-3)}
 .section--services{background:var(--bg-4)}
 .section--award{background:var(--bg-2)}
@@ -380,3 +381,21 @@ img{max-width:100%;height:auto;display:block}
   .stat__num{font-size:clamp(18px, 1.6vw, 22px)}
 }
 .header__cta{margin-left:auto}
+.section-surface{
+  border-radius:24px;
+  overflow:hidden;
+  padding:clamp(24px, 3vw, 40px);
+}
+.section-surface--home{background:radial-gradient(circle at 20% 10%, var(--hero-navy-1) 0%, var(--hero-navy-2) 45%, var(--hero-navy-3) 100%)}
+.section-surface--partners{background:linear-gradient(180deg, var(--section-light-blue-1) 0%, var(--section-light-blue-2) 100%)}
+.section-surface--about{background:var(--bg-3)}
+.section-surface--services{background:var(--bg-4)}
+.section-surface--award{background:var(--bg-2)}
+.section-surface--corporate{background:var(--bg-5)}
+.section-surface--team{background:var(--bg-4)}
+.section-surface--certificates{background:var(--bg-2)}
+.section-surface--industries{background:var(--bg-6)}
+.section-surface--contact{background:var(--bg-2)}
+@media (max-width: 640px){
+  .section-surface{border-radius:16px}
+}
