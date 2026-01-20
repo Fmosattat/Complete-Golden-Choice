@@ -224,6 +224,16 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
     return img;
   }
 
+  function setSmartImg(imgEl, base) {
+    const candidates = imgCandidates(base);
+    let idx = 0;
+    imgEl.src = candidates[idx];
+    imgEl.onerror = () => {
+      idx += 1;
+      if (idx < candidates.length) imgEl.src = candidates[idx];
+    };
+  }
+
   function smoothScrollTo(selector) {
     const el = document.querySelector(selector);
     if (!el) return;
@@ -428,6 +438,78 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
   });
 
   renderCardTabs('teamTabs', teamTabs);
+
+  // ----------------------------
+  // Hero rotating image swap
+  // ----------------------------
+  const heroCarousel = document.getElementById('heroCarousel');
+  const heroMainImg = document.getElementById('heroMainImg');
+  const heroSmallImgA = document.getElementById('heroSmallImgA');
+  const heroSmallImgB = document.getElementById('heroSmallImgB');
+  const heroDots = document.querySelectorAll('[data-hero-dot]');
+
+  const heroImages = [
+    { base: 'Homepage11', alt: 'Homepage hero image' },
+    { base: 'homepage33', alt: 'Homepage small image 1' },
+    { base: 'homepage22', alt: 'Homepage small image 2' }
+  ];
+
+  let heroIndex = 0;
+  let heroTimer = null;
+
+  function updateHeroImages(index) {
+    heroIndex = index % heroImages.length;
+    const big = heroImages[heroIndex];
+    const smallA = heroImages[(heroIndex + 1) % heroImages.length];
+    const smallB = heroImages[(heroIndex + 2) % heroImages.length];
+
+    if (heroMainImg) {
+      setSmartImg(heroMainImg, big.base);
+      heroMainImg.alt = big.alt;
+    }
+    if (heroSmallImgA) {
+      setSmartImg(heroSmallImgA, smallA.base);
+      heroSmallImgA.alt = smallA.alt;
+    }
+    if (heroSmallImgB) {
+      setSmartImg(heroSmallImgB, smallB.base);
+      heroSmallImgB.alt = smallB.alt;
+    }
+
+    heroDots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === heroIndex);
+      dot.setAttribute('aria-pressed', String(i === heroIndex));
+    });
+  }
+
+  function startHeroRotation() {
+    if (heroTimer) clearInterval(heroTimer);
+    heroTimer = setInterval(() => {
+      updateHeroImages(heroIndex + 1);
+    }, 5000);
+  }
+
+  if (heroMainImg && heroSmallImgA && heroSmallImgB) {
+    updateHeroImages(0);
+    startHeroRotation();
+
+    heroDots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.getAttribute('data-hero-dot'));
+        if (!Number.isNaN(idx)) {
+          updateHeroImages(idx);
+          startHeroRotation();
+        }
+      });
+    });
+
+    heroCarousel?.addEventListener('mouseenter', () => {
+      if (heroTimer) clearInterval(heroTimer);
+    });
+    heroCarousel?.addEventListener('mouseleave', () => {
+      startHeroRotation();
+    });
+  }
 
   // ----------------------------
   // Services: open specific tab + scroll from nav

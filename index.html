@@ -23,38 +23,42 @@
 
   <!-- Main Navbar -->
   <header class="header" id="header">
-    <div class="container header__inner">
-      <a class="brand" href="#home" aria-label="Go to Home">
-        <img class="brand__logo" src="assets/images/logos (1).png" alt="Golden Choice logo" onerror="this.onerror=null;this.src='assets/images/logos (1).jpg'" />
-        <span class="brand__name">GOLDEN CHOICE</span>
-      </a>
+    <div class="container-wide">
+      <div class="nav-surface">
+        <div class="header__inner">
+          <a class="brand" href="#home" aria-label="Go to Home">
+            <img class="brand__logo" src="assets/images/logos (1).png" alt="Golden Choice logo" onerror="this.onerror=null;this.src='assets/images/logos (1).jpg'" />
+            <span class="brand__name">GOLDEN CHOICE</span>
+          </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a class="nav__link" href="#home">Home</a>
+          <nav class="nav" aria-label="Primary">
+            <a class="nav__link" href="#home">Home</a>
 
-        <div class="nav__dropdown" data-dropdown>
-          <button class="nav__link nav__link--btn" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-button>
-            Services
-            <span class="caret" aria-hidden="true">▾</span>
+            <div class="nav__dropdown" data-dropdown>
+              <button class="nav__link nav__link--btn" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-button>
+                Services
+                <span class="caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav__menu" role="menu" aria-label="Services" data-dropdown-menu>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Recruitment Services">Recruitment Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Housekeeping Services">Housekeeping Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Manpower Outsourcing Services">Manpower Outsourcing Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Hospitality Services">Hospitality Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="PRO Services">PRO Services</button>
+              </div>
+            </div>
+
+            <a class="nav__link" href="#technology-partners">Corporate Partners</a>
+            <a class="nav__link" href="#team">Team</a>
+          </nav>
+
+          <a class="btn btn--primary header__cta" href="#contact">Get in touch</a>
+
+          <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-toggle>
+            <span></span><span></span><span></span>
           </button>
-          <div class="nav__menu" role="menu" aria-label="Services" data-dropdown-menu>
-            <button class="nav__item" role="menuitem" type="button" data-open-service="Recruitment Services">Recruitment Services</button>
-            <button class="nav__item" role="menuitem" type="button" data-open-service="Housekeeping Services">Housekeeping Services</button>
-            <button class="nav__item" role="menuitem" type="button" data-open-service="Manpower Outsourcing Services">Manpower Outsourcing Services</button>
-            <button class="nav__item" role="menuitem" type="button" data-open-service="Hospitality Services">Hospitality Services</button>
-            <button class="nav__item" role="menuitem" type="button" data-open-service="PRO Services">PRO Services</button>
-          </div>
         </div>
-
-        <a class="nav__link" href="#technology-partners">Corporate Partners</a>
-        <a class="nav__link" href="#team">Team</a>
-      </nav>
-
-      <a class="btn btn--primary header__cta" href="#contact">Get in touch</a>
-
-      <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-toggle>
-        <span></span><span></span><span></span>
-      </button>
+      </div>
     </div>
 
     <!-- Mobile Drawer -->
@@ -82,10 +86,10 @@
     <!-- HOME / HERO -->
     <section class="section hero section--home" id="home">
       <div class="container-wide">
-        <div class="section-surface section-surface--home hero__grid">
+        <div class="section-surface section-surface--home hero__grid" id="heroCarousel">
         <div class="hero__left">
           <div class="hero__imageWrap hero__imageWrap--large">
-            <img class="hero__image" src="assets/images/Homepage11.png" alt="Homepage hero image" />
+            <img class="hero__image" id="heroMainImg" src="assets/images/Homepage11.png" alt="Homepage hero image" />
             <a class="imgArrow" href="#contact" aria-label="Contact us">
               <span aria-hidden="true">↗</span>
             </a>
@@ -103,13 +107,18 @@
 
           <div class="hero__miniGrid" aria-label="Featured images">
             <div class="hero__imageWrap">
-              <img class="hero__image" src="assets/images/homepage33.png" alt="Homepage small image 1" onerror="this.onerror=null;this.src='assets/images/homepage33.jpg'" />
+              <img class="hero__image" id="heroSmallImgA" src="assets/images/homepage33.png" alt="Homepage small image 1" onerror="this.onerror=null;this.src='assets/images/homepage33.jpg'" />
               <a class="imgArrow" href="#contact" aria-label="Contact us"><span aria-hidden="true">↗</span></a>
             </div>
             <div class="hero__imageWrap">
-              <img class="hero__image" src="assets/images/homepage22.png" alt="Homepage small image 2" onerror="this.onerror=null;this.src='assets/images/homepage22.jpg'" />
+              <img class="hero__image" id="heroSmallImgB" src="assets/images/homepage22.png" alt="Homepage small image 2" onerror="this.onerror=null;this.src='assets/images/homepage22.jpg'" />
               <a class="imgArrow" href="#contact" aria-label="Contact us"><span aria-hidden="true">↗</span></a>
             </div>
+          </div>
+          <div class="hero__dots" role="tablist" aria-label="Hero images">
+            <button class="hero__dot is-active" type="button" data-hero-dot="0" aria-label="Show hero image 1"></button>
+            <button class="hero__dot" type="button" data-hero-dot="1" aria-label="Show hero image 2"></button>
+            <button class="hero__dot" type="button" data-hero-dot="2" aria-label="Show hero image 3"></button>
           </div>
 
           <div class="stats">
