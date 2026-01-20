@@ -119,6 +119,7 @@
       id: 'recruitment',
       label: 'Recruitment Services',
       imageBase: 'Recruitment Services',
+      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Recruitment Services description here.',
       bullets: ['Candidate sourcing & screening', 'Skilled + unskilled placements', 'Onboarding & compliance support']
     },
@@ -126,6 +127,7 @@
       id: 'housekeeping',
       label: 'Housekeeping Services',
       imageBase: 'Housekeeping Services',
+      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Housekeeping Services description here.',
       bullets: ['Facility upkeep & sanitation', 'Trained housekeeping teams', 'Quality inspections & reporting']
     },
@@ -133,6 +135,7 @@
       id: 'outsourcing',
       label: 'Manpower Outsourcing Services',
       imageBase: 'Manpower Outsourcing Services',
+      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Manpower Outsourcing Services description here.',
       bullets: ['Flexible workforce planning', 'Project-based staffing', 'Payroll & HR administration']
     },
@@ -140,6 +143,7 @@
       id: 'hospitality',
       label: 'Hospitality Services',
       imageBase: 'Hospitality Services',
+      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Hospitality Services description here.',
       bullets: ['Hotel & event staffing', 'Guest service training', 'Operational excellence support']
     },
@@ -147,6 +151,7 @@
       id: 'pro',
       label: 'PRO Services',
       imageBase: 'PRO SERVICES',
+      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your PRO Services description here.',
       bullets: ['Visa processing & renewals', 'Government documentation', 'Regulatory compliance assistance']
     },
@@ -168,6 +173,7 @@
       label: 'Moshahid Reza',
       subtitle: 'CEO',
       title: 'CEO Mr. Moshahid Reza message:',
+      role: 'CEO',
       imageBase: 'Moshahid Reza',
       body: `"I am driven by a vision for excellence, we assure impeccable manpower solutions, fostering partnerships that redefine industry standards and empower organizational growth." As Chairman of Golden Choice, I'm committed to upholding our promises and enhancing organizational productivity through Qatar professionals, setting industry standards, and fostering mutually beneficial partnerships with Nepalese talent and organizations.
 We propose a strategic alliance to provide efficient, economic, and confidential manpower solutions, ensuring satisfaction with blue- and white-collar recruitment needs.”`
@@ -177,6 +183,7 @@ We propose a strategic alliance to provide efficient, economic, and confidential
       label: 'Pragyanand Rai',
       subtitle: 'General Manager',
       title: "GENERAL MANAGER'S MESSAGE Mr. Pragyanand Rai",
+      role: 'General Manager',
       imageBase: 'Pragyanand Rai',
       body: `"Empowering Success through Integrity, Quality, and Partnership." As a General Manager of Golden Choice. With over three decades of experience, we are proud to be a trusted partner in facility management, waste management, and manpower recruitment, delivering tailored solutions to meet the needs of businesses in Qatar and worldwide. Our commitment to quality, efficiency, and professionalism drives everything we do, empowering our clients to achieve their goals.
 At Golden Choice, we believe in creating mutual growth and value. Our approach centers on integrity and shared success, benefiting both our clients and the talented individuals we support. Thank you for considering us as your partner; we look forward to building a successful future together.`
@@ -186,6 +193,7 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
       label: 'Vikas Kumar',
       subtitle: 'Operation Coordinator',
       title: "OPERATION COORDINATOR'S Mr. Vikas Kumar",
+      role: 'Operation Coordinator',
       imageBase: 'Vikas Kumar',
       body: `With relentless dedication to our mission and vision, we are determined to deliver on our promise of exceptional value. With Golden Choice Contracting and Services" At Golden Choice, we are driven by a singular purpose – to provide exceptional value to our clients. Therefore, we continually improve our operations to meet their evolving needs. Our operational flexibility and commitment to high quality standards allow us to swiftly respond to their requests as soon as the need arises. Maintaining such standards has only been possible through a dedicated workforce, whose well-being and safety remain a priority. As such, we have implemented stringent Adopting a preventative and proactive approach to safety, we are able to focus on streamlining operations and supporting new growth to organisation.`
     }
@@ -237,19 +245,21 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
   }
 
   // ----------------------------
-  // Vertical Tabs Component (accessible)
+  // Card Tabs Component (accessible)
   // ----------------------------
-  function renderVerticalTabs(rootId, tabs, options = {}) {
+  function renderCardTabs(rootId, tabs, options = {}) {
     const root = document.getElementById(rootId);
     if (!root) return;
 
     const list = document.createElement('div');
-    list.className = 'vTabs__list';
+    list.className = 'cardTabs__list';
     list.setAttribute('role', 'tablist');
-    list.setAttribute('aria-orientation', 'vertical');
+    list.setAttribute('aria-orientation', 'horizontal');
 
     const panel = document.createElement('div');
-    panel.className = 'vTabs__panel';
+    panel.className = 'cardTabs__panel';
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('tabindex', '0');
 
     let activeIndex = 0;
 
@@ -262,50 +272,74 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
 
       const t = tabs[activeIndex];
       panel.innerHTML = '';
+      panel.id = `${rootId}-panel-${t.id || activeIndex}`;
+      panel.setAttribute('aria-labelledby', `${rootId}-tab-${t.id || activeIndex}`);
 
       const inner = document.createElement('div');
-      inner.className = 'vTabs__panelInner';
+      inner.className = 'cardTabs__panelInner';
+      inner.classList.add('is-enter');
+
+      const media = document.createElement('div');
+      media.className = 'cardTabs__media';
+      if (t.imageBase) {
+        media.appendChild(createSmartImg(t.imageBase, t.label));
+      }
+      inner.appendChild(media);
+
+      const content = document.createElement('div');
+      content.className = 'cardTabs__content';
 
       const h = document.createElement('h3');
       h.textContent = t.title || t.label;
-      inner.appendChild(h);
+      content.appendChild(h);
+
+      if (t.role) {
+        const role = document.createElement('div');
+        role.className = 'cardTabs__role';
+        role.textContent = t.role;
+        content.appendChild(role);
+      }
+
+      if (t.subtitle) {
+        const subtitle = document.createElement('div');
+        subtitle.className = 'cardTabs__subtitle';
+        subtitle.textContent = t.subtitle;
+        content.appendChild(subtitle);
+      }
 
       const p = document.createElement('p');
       p.textContent = t.body || '';
-      inner.appendChild(p);
+      content.appendChild(p);
 
       if (Array.isArray(t.bullets) && t.bullets.length > 0) {
         const ul = document.createElement('ul');
-        ul.className = 'vTabs__bullets';
+        ul.className = 'cardTabs__bullets';
         t.bullets.forEach((item) => {
           const li = document.createElement('li');
           li.textContent = item;
           ul.appendChild(li);
         });
-        inner.appendChild(ul);
-      }
-
-      // media
-      if (t.imageBase) {
-        const media = document.createElement('div');
-        media.className = 'vTabs__media';
-        media.appendChild(createSmartImg(t.imageBase, t.label));
-        inner.appendChild(media);
+        content.appendChild(ul);
       }
 
       // Optional CTA
       if (options.includeCTA) {
         const cta = document.createElement('div');
-        cta.className = 'vTabs__cta';
+        cta.className = 'cardTabs__cta';
         const a = document.createElement('a');
         a.className = 'btn btn--primary';
         a.href = '#contact';
         a.textContent = 'Contact us';
         cta.appendChild(a);
-        inner.appendChild(cta);
+        content.appendChild(cta);
       }
 
+      inner.appendChild(content);
       panel.appendChild(inner);
+
+      requestAnimationFrame(() => {
+        inner.classList.add('is-active');
+      });
 
       if (focus) {
         const btn = list.children[activeIndex];
@@ -319,25 +353,32 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
 
     tabs.forEach((t, i) => {
       const btn = document.createElement('button');
-      btn.className = 'vTabs__tab';
+      btn.className = 'cardTabs__tab';
       btn.type = 'button';
       btn.id = `${rootId}-tab-${t.id || i}`;
       btn.setAttribute('role', 'tab');
       btn.setAttribute('aria-selected', 'false');
+      btn.setAttribute('aria-controls', `${rootId}-panel-${t.id || i}`);
       btn.tabIndex = -1;
       const title = document.createElement('span');
-      title.className = 'vTabs__tabTitle';
+      title.className = 'cardTabs__tabTitle';
       title.textContent = t.label;
       btn.appendChild(title);
 
       if (t.subtitle) {
         const subtitle = document.createElement('span');
-        subtitle.className = 'vTabs__tabSubtitle';
+        subtitle.className = 'cardTabs__tabSubtitle';
         subtitle.textContent = t.subtitle;
         btn.appendChild(subtitle);
       }
 
       btn.addEventListener('click', () => setActive(i, true));
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActive(i, true);
+        }
+      });
       btn.addEventListener('keydown', (e) => {
         const key = e.key;
         const max = tabs.length - 1;
@@ -374,13 +415,15 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
     };
   }
 
-  renderVerticalTabs('aboutTabs', aboutTabs);
-
-  const servicesApi = renderVerticalTabs('servicesTabs', serviceTabs, {
+  renderCardTabs('aboutTabs', aboutTabs, {
     includeCTA: true,
   });
 
-  renderVerticalTabs('teamTabs', teamTabs);
+  const servicesApi = renderCardTabs('servicesTabs', serviceTabs, {
+    includeCTA: true,
+  });
+
+  renderCardTabs('teamTabs', teamTabs);
 
   // ----------------------------
   // Services: open specific tab + scroll from nav

@@ -133,30 +133,66 @@ img{max-width:100%;height:auto;display:block}
 .logoMarquee__logo{height:46px;opacity:.95;filter:saturate(.95)}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-.vTabs{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start}
-.vTabs__list{position:sticky;top:92px;display:grid;gap:10px}
-.vTabs__tab{
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:16px;
-  padding:14px 14px;
+.cardTabs__list{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.cardTabs__tab{
+  border:1px solid rgba(255,255,255,.12);
+  background:#0f172a;
+  color:#e2e8f0;
+  border-radius:999px;
+  padding:10px 18px;
   text-align:left;
   cursor:pointer;
-  font-weight:800;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:2px;
+  font-weight:700;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:2px;
+  box-shadow:var(--shadow2);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
-.vTabs__tabTitle{display:block;font-weight:800}
-.vTabs__tabSubtitle{display:block;font-size:12px;color:var(--muted);margin-top:4px}
-.vTabs__tab:hover{box-shadow:var(--shadow2)}
-.vTabs__tab[aria-selected="true"]{border-color:rgba(37,99,235,.35);background:linear-gradient(180deg,rgba(37,99,235,.08),#fff)}
-.vTabs__panel{border:1px solid var(--line);border-radius:var(--radius2);background:var(--card);box-shadow:var(--shadow);overflow:hidden}
-.vTabs__panelInner{padding:22px}
-.vTabs__panel h3{margin:0 0 10px;font-size:22px}
-.vTabs__panel p{margin:0;color:var(--muted);line-height:1.7}
-.vTabs__bullets{margin:14px 0 0;padding-left:18px;color:var(--muted);line-height:1.7;display:grid;gap:6px}
-.vTabs__bullets li{list-style:disc}
-.vTabs__media{margin-top:16px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--soft)}
-.vTabs__cta{margin-top:14px}
+.cardTabs__tab:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.cardTabs__tab:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.cardTabs__tab[aria-selected="true"]{
+  background:var(--accent2);
+  color:#0f172a;
+  border-color:rgba(251,191,36,.6);
+}
+.cardTabs__tabTitle{display:block;font-weight:800}
+.cardTabs__tabSubtitle{display:block;font-size:12px;opacity:.8}
+.cardTabs__panel{
+  background:#0b1220;
+  border-radius:var(--radius2);
+  padding:24px;
+  box-shadow:var(--shadow);
+  color:#e2e8f0;
+}
+.cardTabs__panelInner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  align-items:center;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .3s ease, transform .3s ease;
+}
+.cardTabs__panelInner.is-active{
+  opacity:1;
+  transform:translateY(0);
+}
+.cardTabs__media{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0f172a}
+.cardTabs__media img{width:100%;height:auto;display:block}
+.cardTabs__content h3{margin:0 0 8px;font-size:22px;color:#fff}
+.cardTabs__subtitle{color:#cbd5f5;font-weight:600;margin-bottom:10px}
+.cardTabs__role{color:#fbbf24;font-weight:700;margin-bottom:8px}
+.cardTabs__content p{margin:0;color:#cbd5f5;line-height:1.7}
+.cardTabs__bullets{margin:14px 0 0;padding-left:18px;color:#cbd5f5;line-height:1.7;display:grid;gap:6px}
+.cardTabs__bullets li{list-style:disc}
+.cardTabs__cta{margin-top:14px}
 
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .cardImg{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--soft);box-shadow:var(--shadow2);cursor:pointer}
@@ -211,9 +247,7 @@ img{max-width:100%;height:auto;display:block}
   .hero__grid{grid-template-columns:1fr}
   .hero__miniGrid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr 1fr}
-  .vTabs{grid-template-columns:1fr}
-  .vTabs__list{position:relative;top:auto;grid-auto-flow:column;grid-auto-columns:1fr;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
-  .vTabs__tab{scroll-snap-align:start}
+  .cardTabs__panelInner{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(3,1fr)}
   .logoGrid{grid-template-columns:repeat(4,1fr)}
   .certGrid{grid-template-columns:repeat(3,1fr)}
@@ -236,6 +270,9 @@ img{max-width:100%;height:auto;display:block}
   .contactCards{grid-template-columns:1fr}
   .logoMarquee__track{padding:16px 20px}
   .logoMarquee__logo{height:34px}
+  .cardTabs__list{flex-wrap:nowrap;overflow:auto;padding-bottom:6px}
+  .cardTabs__tab{white-space:nowrap}
+  .cardTabs__panel{padding:18px}
 }
 
 @media (min-width: 1400px){
