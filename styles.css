@@ -14,6 +14,13 @@
   --card-bg:#f6f9ff;
   --card-bg-2:#eef4ff;
   --card-border:rgba(15,23,42,.08);
+  --bg-1:#f6f9ff;
+  --bg-2:#ffffff;
+  --bg-3:#f3fbff;
+  --bg-4:#f7f7ff;
+  --bg-5:#f8fbf5;
+  --bg-6:#fff7f0;
+  --divider:rgba(15,23,42,.06);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -96,13 +103,27 @@ img{max-width:100%;height:auto;display:block}
 .mobile__sublink{display:block;width:100%;text-align:left;background:transparent;border:0;padding:10px 0;font-weight:700;cursor:pointer}
 .mobile__cta{margin-top:6px}
 
-.section{padding:72px 0}
+.section{padding:clamp(48px, 6vw, 96px) 0;border-top:1px solid var(--divider)}
 .section--tight{padding:16px 0 24px}
 .sectionHeader{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
 .sectionHeader h2{margin:0;font-size:clamp(26px, 2.6vw, 36px);letter-spacing:-.02em}
-.section-title{text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.section-title{text-transform:uppercase;letter-spacing:.10em;font-weight:800;font-size:clamp(28px, 3.5vw, 56px);margin-bottom:clamp(20px, 2.4vw, 40px)}
 .sectionHeader p{margin:0;color:var(--muted);max-width:640px}
 .sectionCopy{margin:0 0 22px;color:var(--muted);max-width:780px}
+.text-block{max-width:70ch}
+
+.section--home{background:var(--bg-1)}
+.section--partners{background:var(--bg-2)}
+.section--about{background:var(--bg-3)}
+.section--services{background:var(--bg-4)}
+.section--award{background:var(--bg-2)}
+.section--corporate{background:var(--bg-5)}
+.section--team{background:var(--bg-4)}
+.section--certificates{background:var(--bg-2)}
+.section--industries{background:var(--bg-6)}
+.section--manpower{background:var(--bg-1)}
+.section--human{background:var(--bg-3)}
+.section--contact{background:var(--bg-2)}
 
 .hero{padding-top:clamp(32px, 4vw, 64px)}
 .hero__grid{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(16px, 2vw, 28px);align-items:stretch}
