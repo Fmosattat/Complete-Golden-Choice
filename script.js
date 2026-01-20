@@ -251,13 +251,16 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
     const root = document.getElementById(rootId);
     if (!root) return;
 
+    const card = document.createElement('div');
+    card.className = 'tab-card';
+
     const list = document.createElement('div');
-    list.className = 'cardTabs__list';
+    list.className = 'tab-sidebar';
     list.setAttribute('role', 'tablist');
-    list.setAttribute('aria-orientation', 'horizontal');
+    list.setAttribute('aria-orientation', 'vertical');
 
     const panel = document.createElement('div');
-    panel.className = 'cardTabs__panel';
+    panel.className = 'tab-panel';
     panel.setAttribute('role', 'tabpanel');
     panel.setAttribute('tabindex', '0');
 
@@ -276,18 +279,18 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
       panel.setAttribute('aria-labelledby', `${rootId}-tab-${t.id || activeIndex}`);
 
       const inner = document.createElement('div');
-      inner.className = 'cardTabs__panelInner';
+      inner.className = 'tab-panel__inner';
       inner.classList.add('is-enter');
 
       const media = document.createElement('div');
-      media.className = 'cardTabs__media';
+      media.className = 'tab-panel__media';
       if (t.imageBase) {
         media.appendChild(createSmartImg(t.imageBase, t.label));
       }
       inner.appendChild(media);
 
       const content = document.createElement('div');
-      content.className = 'cardTabs__content';
+      content.className = 'tab-panel__content';
 
       const h = document.createElement('h3');
       h.textContent = t.title || t.label;
@@ -295,14 +298,14 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
 
       if (t.role) {
         const role = document.createElement('div');
-        role.className = 'cardTabs__role';
+        role.className = 'tab-panel__role';
         role.textContent = t.role;
         content.appendChild(role);
       }
 
       if (t.subtitle) {
         const subtitle = document.createElement('div');
-        subtitle.className = 'cardTabs__subtitle';
+        subtitle.className = 'tab-panel__subtitle';
         subtitle.textContent = t.subtitle;
         content.appendChild(subtitle);
       }
@@ -313,7 +316,7 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
 
       if (Array.isArray(t.bullets) && t.bullets.length > 0) {
         const ul = document.createElement('ul');
-        ul.className = 'cardTabs__bullets';
+        ul.className = 'tab-panel__bullets';
         t.bullets.forEach((item) => {
           const li = document.createElement('li');
           li.textContent = item;
@@ -325,7 +328,7 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
       // Optional CTA
       if (options.includeCTA) {
         const cta = document.createElement('div');
-        cta.className = 'cardTabs__cta';
+        cta.className = 'tab-panel__cta';
         const a = document.createElement('a');
         a.className = 'btn btn--primary';
         a.href = '#contact';
@@ -353,7 +356,7 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
 
     tabs.forEach((t, i) => {
       const btn = document.createElement('button');
-      btn.className = 'cardTabs__tab';
+      btn.className = 'tab-pill';
       btn.type = 'button';
       btn.id = `${rootId}-tab-${t.id || i}`;
       btn.setAttribute('role', 'tab');
@@ -361,13 +364,13 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
       btn.setAttribute('aria-controls', `${rootId}-panel-${t.id || i}`);
       btn.tabIndex = -1;
       const title = document.createElement('span');
-      title.className = 'cardTabs__tabTitle';
+      title.className = 'tab-pill__title';
       title.textContent = t.label;
       btn.appendChild(title);
 
       if (t.subtitle) {
         const subtitle = document.createElement('span');
-        subtitle.className = 'cardTabs__tabSubtitle';
+        subtitle.className = 'tab-pill__subtitle';
         subtitle.textContent = t.subtitle;
         btn.appendChild(subtitle);
       }
@@ -397,8 +400,9 @@ At Golden Choice, we believe in creating mutual growth and value. Our approach c
     });
 
     root.innerHTML = '';
-    root.appendChild(list);
-    root.appendChild(panel);
+    card.appendChild(list);
+    card.appendChild(panel);
+    root.appendChild(card);
 
     setActive(0);
 
