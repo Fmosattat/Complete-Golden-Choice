@@ -227,8 +227,8 @@ img{max-width:100%;height:auto;display:block}
 .stat__num{font-weight:900;font-size:clamp(16px, 1.8vw, 20px);color:var(--accent-green)}
 .stat__label{font-size:13px;margin-top:6px}
 
-.logoMarquee{border:1px solid var(--accent-green);border-radius:999px;background:#0b1b3a;overflow:hidden;position:relative;min-height:72px;display:flex;align-items:center;box-shadow:var(--shadow2)}
-.logoMarquee__track{display:flex;gap:40px;align-items:center;padding:20px 28px;will-change:transform;animation:marquee 30s linear infinite}
+.logoMarquee{border:1px solid #0b1b3a;border-radius:999px;background:var(--accent-green);overflow:hidden;position:relative;min-height:72px;display:flex;align-items:center;box-shadow:var(--shadow2)}
+.logoMarquee__track{display:flex;gap:40px;align-items:center;padding:20px 28px;background:#0b1b3a;border-radius:999px;will-change:transform;animation:marquee 30s linear infinite}
 .logoMarquee:hover .logoMarquee__track{animation-play-state:paused}
 .logoMarquee__logo{height:46px;opacity:.8;filter:grayscale(.2);transition:opacity .2s ease, filter .2s ease}
 .logoMarquee__logo:hover{opacity:1;filter:grayscale(0)}
