@@ -144,7 +144,7 @@ img{max-width:100%;height:auto;display:block}
 .mobile__cta.btn--primary{background:#7a7a7a;color:#40e0d0}
 .hero__actions .btn--primary{
   background:linear-gradient(90deg,#40e0d0 0%, #2fc6b7 100%);
-  color:#5a5a5a;
+  color:#4b4b4b;
 }
 .btn--primary:hover{filter:brightness(1.03)}
 .btn--ghost{background:transparent;border-color:rgba(255,255,255,.18);color:var(--text)}
@@ -193,7 +193,7 @@ img{max-width:100%;height:auto;display:block}
 .hero__miniGrid .hero__image{cursor:pointer}
 .hero__headline{background:#7a7a7a;border:1px solid var(--border);border-radius:var(--radius2);padding:22px;box-shadow:var(--shadow2);text-align:center}
 .hero__kicker{font-weight:800;letter-spacing:.08em;color:var(--accent);font-size:13px}
-.hero__title{margin:10px 0 10px;font-size:clamp(28px, 3vw, 44px);line-height:1.12;letter-spacing:-.03em;color:var(--navy-blue)}
+.hero__title{margin:10px 0 10px;font-size:clamp(28px, 3vw, 44px);line-height:1.12;letter-spacing:-.03em;color:#4b4b4b}
 .hero__subtitle{margin:0;color:var(--muted)}
 .hero__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;justify-content:center}
 .hero__miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -262,7 +262,11 @@ img{max-width:100%;height:auto;display:block}
 .section--services .tab-panel__content p,
 .section--services .tab-panel__subtitle,
 .section--services .tab-panel__bullets,
-.section--services .tab-panel__role{color:var(--navy-blue)}
+.section--services .tab-panel__role{color:#4b4b4b;text-align:right}
+.section--services .tab-panel__content h3{font-size:clamp(26px, 2.8vw, 34px)}
+.section--services .tab-panel__content p{font-size:clamp(16px, 1.4vw, 20px)}
+.section--services .tab-panel__bullets{font-size:clamp(14px, 1.2vw, 18px)}
+.section--services .tab-panel__inner{justify-items:end}
 .section--services .tab-pill{
   background:#40e0d0;
   color:#7a7a7a;
@@ -272,6 +276,12 @@ img{max-width:100%;height:auto;display:block}
   background:#40e0d0;
   color:#7a7a7a;
   box-shadow:0 10px 22px rgba(64,224,208,.25);
+}
+.section--services .tab-sidebar{justify-content:space-between}
+.section--services .tab-pill{
+  min-height:76px;
+  font-size:16px;
+  flex:1;
 }
 .section--about .tab-card{background:#7a7a7a}
 .section--about .section-title{color:#4b4b4b;text-align:center;font-size:clamp(32px, 4vw, 64px)}
