@@ -193,7 +193,7 @@ img{max-width:100%;height:auto;display:block}
 .hero__miniGrid .hero__image{cursor:pointer}
 .hero__headline{background:#7a7a7a;border:1px solid var(--border);border-radius:var(--radius2);padding:22px;box-shadow:var(--shadow2);text-align:center}
 .hero__kicker{font-weight:800;letter-spacing:.08em;color:var(--accent);font-size:13px}
-.hero__title{margin:10px 0 10px;font-size:clamp(28px, 3vw, 44px);line-height:1.12;letter-spacing:-.03em;color:#0f766e}
+.hero__title{margin:10px 0 10px;font-size:clamp(28px, 3vw, 44px);line-height:1.12;letter-spacing:-.03em;color:#ffffff}
 .hero__subtitle{margin:0;color:var(--muted)}
 .hero__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;justify-content:center}
 .hero__miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -291,7 +291,7 @@ img{max-width:100%;height:auto;display:block}
 .section--services .tab-pill__subtitle{text-align:center}
 .section--services .tab-pill[aria-selected="true"]{
   background:#4b4b4b;
-  color:#4b4b4b;
+  color:#ffffff;
   border-color:rgba(75,75,75,.6);
   box-shadow:0 8px 18px rgba(75,75,75,.35);
 }

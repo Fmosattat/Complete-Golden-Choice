@@ -119,35 +119,35 @@
       id: 'recruitment',
       label: 'Recruitment Services',
       imageBase: 'Recruitment Services',
-      body: 'Add your Recruitment Services description here.',
+      body: 'End-to-end hiring support to help you find the right talent—sourcing, screening, interviewing coordination, and onboarding for permanent or temporary roles.',
       bullets: ['Candidate sourcing & screening', 'Skilled + unskilled placements', 'Onboarding & compliance support']
     },
     {
       id: 'housekeeping',
       label: 'Housekeeping Services',
       imageBase: 'Housekeeping Services',
-      body: 'Add your Housekeeping Services description here.',
+      body: 'Professional cleaning and upkeep solutions for homes, offices, and facilities, ensuring a safe, hygienic, and well-maintained environment.',
       bullets: ['Facility upkeep & sanitation', 'Trained housekeeping teams', 'Quality inspections & reporting']
     },
     {
       id: 'outsourcing',
       label: 'Manpower Outsourcing Services',
       imageBase: 'Manpower Outsourcing Services',
-      body: 'Add your Manpower Outsourcing Services description here.',
+      body: 'Providing skilled and unskilled workforce on demand to support business operations, including staffing, payroll management, and workforce supervision.',
       bullets: ['Flexible workforce planning', 'Project-based staffing', 'Payroll & HR administration']
     },
     {
       id: 'hospitality',
       label: 'Hospitality Services',
       imageBase: 'Hospitality Services',
-      body: 'Add your Hospitality Services description here.',
+      body: 'Staff and service solutions for hotels, events, and guest-facing operations, including front desk, catering support, concierge, and customer service roles.',
       bullets: ['Hotel & event staffing', 'Guest service training', 'Operational excellence support']
     },
     {
       id: 'pro',
       label: 'PRO Services',
       imageBase: 'PRO SERVICES',
-      body: 'Add your PRO Services description here.',
+      body: 'Government and administrative support services, including visa processing, work permits, document attestation, licensing, and other regulatory formalities.',
       bullets: ['Visa processing & renewals', 'Government documentation', 'Regulatory compliance assistance']
     },
   ];
