@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Golden Choice Contracting & Services — Hospitality and Contracting Excellence in Qatar." />
+  <title>GOLDEN CHOICE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Bar Clock (Doha, Qatar) -->
+  <div class="topbar" role="status" aria-live="polite">
+    <div class="container topbar__inner">
+      <span class="topbar__label">Doha, Qatar</span>
+      <span class="topbar__clock" id="dohaClock">--:--:--</span>
+      <span class="topbar__sep">—</span>
+      <span class="topbar__date" id="dohaDate">---</span>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <header class="header" id="header">
+    <div class="container-wide">
+      <div class="nav-surface">
+        <div class="header__inner">
+          <a class="brand" href="#home" aria-label="Go to Home">
+            <img class="brand__logo" src="assets/images/logos (1).png" alt="Golden Choice logo" onerror="this.onerror=null;this.src='assets/images/logos (1).jpg'" />
+            <span class="brand__name">GOLDEN CHOICE</span>
+          </a>
+
+          <nav class="nav" aria-label="Primary">
+            <a class="nav__link" href="#home">Home</a>
+
+            <div class="nav__dropdown" data-dropdown>
+              <button class="nav__link nav__link--btn" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-button>
+                Services
+                <span class="caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav__menu" role="menu" aria-label="Services" data-dropdown-menu>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Recruitment Services">Recruitment Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Housekeeping Services">Housekeeping Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Manpower Outsourcing Services">Manpower Outsourcing Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="Hospitality Services">Hospitality Services</button>
+                <button class="nav__item" role="menuitem" type="button" data-open-service="PRO Services">PRO Services</button>
+              </div>
+            </div>
+
+            <a class="nav__link" href="#technology-partners">Corporate Partners</a>
+            <a class="nav__link" href="#team">Team</a>
+          </nav>
+
+          <a class="btn btn--primary header__cta" href="#contact">Get in touch</a>
+
+          <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-toggle>
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile" data-mobile>
+      <div class="mobile__inner container">
+        <a class="mobile__link" href="#home">Home</a>
+
+        <details class="mobile__details">
+          <summary>Services</summary>
+          <button class="mobile__sublink" type="button" data-open-service="Recruitment Services">Recruitment Services</button>
+          <button class="mobile__sublink" type="button" data-open-service="Housekeeping Services">Housekeeping Services</button>
+          <button class="mobile__sublink" type="button" data-open-service="Manpower Outsourcing Services">Manpower Outsourcing Services</button>
+          <button class="mobile__sublink" type="button" data-open-service="Hospitality Services">Hospitality Services</button>
+          <button class="mobile__sublink" type="button" data-open-service="PRO Services">PRO Services</button>
+        </details>
+
+        <a class="mobile__link" href="#technology-partners">Corporate Partners</a>
+        <a class="mobile__link" href="#team">Team</a>
+        <a class="btn btn--primary mobile__cta" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME / HERO -->
+    <section class="section hero section--home" id="home">
+      <div class="container-wide">
+        <div class="section-surface section-surface--home hero__grid" id="heroCarousel">
+        <div class="hero__left">
+          <div class="hero__imageWrap hero__imageWrap--large">
+            <img class="hero__image" id="heroMainImg" src="assets/images/Homepage11.png" alt="Homepage hero image" />
+            <a class="imgArrow" href="#contact" aria-label="Contact us">
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <div class="hero__headline">
+            <h1 class="hero__title">A Hub of Hospitality and Contracting Excellence</h1>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#services">Explore Services</a>
+              <a class="btn btn--primary" href="#contact">Contact us</a>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num">8+</div>
+              <div class="stat__label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">Qatar</div>
+              <div class="stat__label">Based Operations</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">Trusted</div>
+              <div class="stat__label">Business Partner</div>
+            </div>
+          </div>
+
+          <div class="hero__miniGrid" aria-label="Featured images">
+            <div class="hero__imageWrap">
+              <img class="hero__image" id="heroSmallImgA" src="assets/images/homepage33.png" alt="Homepage small image 1" onerror="this.onerror=null;this.src='assets/images/homepage33.jpg'" />
+              <a class="imgArrow" href="#contact" aria-label="Contact us"><span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero__imageWrap">
+              <img class="hero__image" id="heroSmallImgB" src="assets/images/homepage22.png" alt="Homepage small image 2" onerror="this.onerror=null;this.src='assets/images/homepage22.jpg'" />
+              <a class="imgArrow" href="#contact" aria-label="Contact us"><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="hero__dots" role="tablist" aria-label="Hero images">
+            <button class="hero__dot is-active" type="button" data-hero-dot="0" aria-label="Show hero image 1"></button>
+            <button class="hero__dot" type="button" data-hero-dot="1" aria-label="Show hero image 2"></button>
+            <button class="hero__dot" type="button" data-hero-dot="2" aria-label="Show hero image 3"></button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNER LOGOS ROTATING BAR -->
+    <section class="section section--tight section--partners" aria-label="Partners">
+      <div class="container-wide">
+        <div class="section-surface section-surface--partners">
+          <div class="logoMarquee" aria-label="Partner logos carousel">
+            <div class="logoMarquee__track" id="partnerMarqueeTrack"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (VERTICAL TABS) -->
+    <section class="section section--services" id="services">
+      <div class="container-wide">
+        <div class="section-surface section-surface--services">
+          <div class="sectionHeader">
+            <h2 class="section-title">SERVICES</h2>
+          </div>
+
+          <div class="cardTabs" id="servicesTabs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (VERTICAL TABS) -->
+    <section class="section section--about" id="about">
+      <div class="container-wide">
+        <div class="section-surface section-surface--about">
+          <div class="sectionHeader">
+            <h2 class="section-title">ABOUT</h2>
+          </div>
+
+          <div class="cardTabs" id="aboutTabs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARD FUNCTION 2023 (GALLERY) -->
+    <section class="section section--award" id="award-function">
+      <div class="container-wide">
+        <div class="section-surface section-surface--award">
+          <div class="sectionHeader">
+            <h2 class="section-title">AWARD FUNCTION 2023</h2>
+          </div>
+          <p class="sectionCopy">In 2023, Golden Choice proudly hosted an award function, celebrating excellence and dedication within our team. It was a momentous occasion, highlighting our commitment to recognizing and rewarding outstanding contributions.</p>
+
+          <div class="gallery" id="awardGallery"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY PARTNERS (GRID LIKE SCREENSHOT) -->
+    <section class="section section--corporate" id="technology-partners">
+      <div class="container-wide">
+        <div class="section-surface section-surface--corporate">
+          <div class="sectionHeader">
+            <h2 class="section-title">CORPORATE PARTNERS</h2>
+          </div>
+
+          <div class="logoGrid" id="technologyPartnersGrid" aria-label="Technology partners logos"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM (VERTICAL TABS) -->
+    <section class="section section--team" id="team">
+      <div class="container-wide">
+        <div class="section-surface section-surface--team">
+          <div class="sectionHeader">
+            <h2 class="section-title">TEAM</h2>
+          </div>
+
+          <div class="cardTabs" id="teamTabs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section section--certificates" id="certificates">
+      <div class="container-wide">
+        <div class="section-surface section-surface--certificates">
+          <div class="sectionHeader">
+            <h2 class="section-title">CERTIFICATES</h2>
+            <p>Selected certificates and recognitions.</p>
+          </div>
+
+          <div class="certGrid" id="certGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATED IMAGE SECTIONS -->
+    <section class="section section--industries" id="industries">
+      <div class="container-wide">
+        <div class="section-surface section-surface--industries">
+          <div class="integrated">
+            <div class="integrated__head">
+              <h2 class="section-title">INDUSTRIES WE SERVE</h2>
+              <p>Integrated visual overview.</p>
+            </div>
+            <div class="integrated__media">
+              <img src="assets/images/Industries we serve.png" alt="Industries we serve" onerror="this.onerror=null;this.src='assets/images/Industries we serve.jpg'" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section contact section--contact" id="contact">
+      <div class="container-wide">
+        <div class="section-surface section-surface--contact contact__grid">
+        <div class="contact__left">
+          <h2 class="section-title">CONTACT US</h2>
+          <p>Send us a message and we’ll get back to you as soon as possible.</p>
+
+          <div class="contactCards">
+            <div class="contactCard">
+              <div class="contactCard__title">Phone</div>
+              <div class="contactCard__value">+974 XX XXX XXX</div>
+            </div>
+            <div class="contactCard">
+              <div class="contactCard__title">Email</div>
+              <div class="contactCard__value">info@goldenchoice.qa</div>
+            </div>
+            <div class="contactCard">
+              <div class="contactCard__title">Location</div>
+              <div class="contactCard__value">Doha, Qatar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__right">
+          <form class="form" id="contactForm" novalidate>
+            <div class="form__row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+
+            <label>
+              <span>Subject</span>
+              <input type="text" name="subject" placeholder="How can we help?" required />
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Submit</button>
+            <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">© <span id="year"></span> GOLDEN CHOICE</div>
+        <div class="footer__links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" type="button" aria-label="Close" id="lightboxClose">✕</button>
+    <img class="lightbox__img" id="lightboxImg" alt="Preview" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
