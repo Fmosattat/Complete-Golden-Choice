@@ -76,7 +76,7 @@ img{max-width:100%;height:auto;display:block}
 
 .header{position:sticky;top:0;z-index:40;background:transparent;padding:12px 0}
 .nav-surface{
-  background:radial-gradient(circle at 20% 20%, #7a7a7a 0%, #707070 45%, #666666 100%);
+  background:radial-gradient(circle at 20% 20%, #40e0d0 0%, #2fc6b7 45%, #1fb0a3 100%);
   border-radius:20px;
   overflow:visible;
   box-shadow:0 10px 26px rgba(15,17,21,.18);
@@ -88,7 +88,7 @@ img{max-width:100%;height:auto;display:block}
   align-items:center;
   padding:14px 20px;
   gap:16px;
-  color:var(--text);
+  color:#7a7a7a;
 }
 
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;justify-self:start}
@@ -96,13 +96,13 @@ img{max-width:100%;height:auto;display:block}
 .brand__name{font-weight:800;letter-spacing:.06em;font-size:clamp(16px, 1.6vw, 20px)}
 
 .nav{display:flex;align-items:center;gap:24px;justify-self:center}
-.nav__link{color:var(--text);text-decoration:none;font-weight:700;font-size:16px;opacity:.9}
+.nav__link{color:#7a7a7a;text-decoration:none;font-weight:700;font-size:16px;opacity:.9}
 .nav__link:hover{opacity:1}
 .nav__link::after{
   content:"";
   display:block;
   height:2px;
-  background:rgba(255,255,255,.35);
+  background:rgba(122,122,122,.65);
   transform:scaleX(0);
   transform-origin:left;
   transition:transform .2s ease;
@@ -110,7 +110,7 @@ img{max-width:100%;height:auto;display:block}
 }
 .nav__link:hover::after{transform:scaleX(1)}
 .nav__link--btn{background:transparent;border:0;cursor:pointer;padding:8px 10px;border-radius:12px}
-.nav__link--btn:hover{background:rgba(255,255,255,.08)}
+.nav__link--btn:hover{background:rgba(122,122,122,.18)}
 
 .nav__dropdown{position:relative}
 .nav__menu{
@@ -135,7 +135,7 @@ img{max-width:100%;height:auto;display:block}
   font-weight:600;
 }
 .nav__item:hover{background:rgba(43,47,54,.06)}
-.caret{margin-left:6px;opacity:.7}
+.caret{margin-left:6px;opacity:.7;color:#7a7a7a}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:999px;padding:12px 16px;font-weight:700;font-size:14px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
 .btn--primary{background:linear-gradient(90deg,var(--accent),#9ca3af);color:white;box-shadow:0 10px 22px rgba(107,114,128,.25)}
