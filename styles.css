@@ -76,7 +76,7 @@ img{max-width:100%;height:auto;display:block}
 
 .header{position:sticky;top:0;z-index:40;background:transparent;padding:12px 0}
 .nav-surface{
-  background:radial-gradient(circle at 20% 20%, #2f343c 0%, #262a31 45%, #1c2026 100%);
+  background:radial-gradient(circle at 20% 20%, #303030 0%, #262626 45%, #1b1b1b 100%);
   border-radius:20px;
   overflow:visible;
   box-shadow:0 10px 26px rgba(15,17,21,.18);
@@ -436,7 +436,7 @@ img{max-width:100%;height:auto;display:block}
   overflow:hidden;
   padding:clamp(24px, 3vw, 40px);
 }
-.section-surface--home{background:radial-gradient(circle at 20% 10%, #2f343c 0%, #262a31 45%, #1c2026 100%)}
+.section-surface--home{background:radial-gradient(circle at 20% 10%, #303030 0%, #262626 45%, #1b1b1b 100%)}
 .section-surface--partners{background:var(--panel)}
 .section-surface--about{background:var(--panel)}
 .section-surface--services{background:var(--panel)}
