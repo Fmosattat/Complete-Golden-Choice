@@ -119,7 +119,6 @@
       id: 'recruitment',
       label: 'Recruitment Services',
       imageBase: 'Recruitment Services',
-      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Recruitment Services description here.',
       bullets: ['Candidate sourcing & screening', 'Skilled + unskilled placements', 'Onboarding & compliance support']
     },
@@ -127,7 +126,6 @@
       id: 'housekeeping',
       label: 'Housekeeping Services',
       imageBase: 'Housekeeping Services',
-      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Housekeeping Services description here.',
       bullets: ['Facility upkeep & sanitation', 'Trained housekeeping teams', 'Quality inspections & reporting']
     },
@@ -135,7 +133,6 @@
       id: 'outsourcing',
       label: 'Manpower Outsourcing Services',
       imageBase: 'Manpower Outsourcing Services',
-      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Manpower Outsourcing Services description here.',
       bullets: ['Flexible workforce planning', 'Project-based staffing', 'Payroll & HR administration']
     },
@@ -143,7 +140,6 @@
       id: 'hospitality',
       label: 'Hospitality Services',
       imageBase: 'Hospitality Services',
-      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your Hospitality Services description here.',
       bullets: ['Hotel & event staffing', 'Guest service training', 'Operational excellence support']
     },
@@ -151,7 +147,6 @@
       id: 'pro',
       label: 'PRO Services',
       imageBase: 'PRO SERVICES',
-      subtitle: 'Professional solutions tailored to your needs',
       body: 'Add your PRO Services description here.',
       bullets: ['Visa processing & renewals', 'Government documentation', 'Regulatory compliance assistance']
     },
